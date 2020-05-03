@@ -1,0 +1,66 @@
+.header-top {
+    height: 20rem;
+}
+
+/*导航栏内容*/
+.menu {
+    width: 120rem;
+    margin: auto;
+    color: #66b1ff;
+}
+
+.search {
+    display: inline-block;
+    width: 25rem;
+    line-height: 6rem;
+    float: right;
+}
+
+/*取消el-ui的导航栏的默认下边框*/
+.el-menu.el-menu--horizontal {
+    border-bottom: none;
+}
+
+.el-menu-item {
+    font-size: 2rem;
+}
+
+.el-menu-item i{
+    font-size: 2rem;
+    color: #fff;
+}
+/*改变默认悬停样式*/
+.el-menu-item:hover{
+    background-color: rgba(0,0,0,0) !important;
+    color: #000 !important;
+}
+
+/*云图片*/
+#cloud {
+    position: absolute;
+    top: -15rem;
+    left: 5%;
+    z-index: -1;
+}
+
+/*阳光图片*/
+#sun {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+/*导航栏之上样式*/
+.header-top-content {
+    width: 120rem;
+    margin: auto;
+}
+
+.blog-logo {
+    margin: 1rem 0 1rem 10rem;
+}
+
+.blog-say {
+    margin-left: 30rem;
+}

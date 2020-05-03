@@ -1,0 +1,70 @@
+<!--公共头部-->
+<div>
+    <link rel="stylesheet" href="../plugins/element/element-ui-index.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/top.css"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_5dv66rar8ta.css">
+    <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
+    <script src="../plugins/vue/vue-2.6.11.js"></script>
+    <script src="../plugins/element/element-ui-index.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/top.js"></script>
+    <!--导航栏顶部空间-->
+    <div class="header-top">
+        <img src="../img/cloud.png" alt="云" id="cloud">
+        <img src="../img/sun.png" alt="阳光" id="sun">
+        <div class="header-top-content">
+            <img src="../img/blog-logo.png" alt="logo" class="blog-logo">
+            <img src="../img/blog-say.png" alt="名言" class="blog-say">
+        </div>
+    </div>
+    <!--  导航栏  -->
+    <div id="nav">
+        <el-menu
+                :default-active="activeIndex"
+                class="el-menu-demo menu"
+                mode="horizontal"
+                background-color="rgba(0,0,0,0)"
+                text-color="#fff"
+                active-text-color="#eee"
+        >
+            <el-menu-item index="1">
+                <i class="iconfont icon-home"></i>
+                <a href="./home.html#1">首页</a>
+            </el-menu-item>
+            <el-menu-item index="2">
+                <i class="iconfont icon-biaoqian"></i>
+                <a href="#">标签</a>
+            </el-menu-item>
+            <el-menu-item index="3">
+                <i class="iconfont icon-baomuleixing"></i>
+                <a href="./blog-type.html#3">分类</a>
+            </el-menu-item>
+            <el-menu-item index="4">
+                <i class="iconfont icon-liuyan"></i>
+                <a href="#">留言</a>
+            </el-menu-item>
+            <el-menu-item index="5">
+                <i class="iconfont icon-shijianzhou"></i>
+                <a href="#">时间轴</a>
+            </el-menu-item>
+            <el-menu-item index="6">
+                <i class="iconfont icon-tubiao302"></i>
+                <a href="#" target="_blank">站长推荐</a>
+            </el-menu-item>
+            <el-menu-item index="7">
+                <i class="iconfont icon-guanyu"></i>
+                <a href="#">关于</a>
+            </el-menu-item>
+            <el-input
+                    placeholder="请输入搜索内容"
+                    suffix-icon="iconfont icon-search"
+                    v-model="search"
+                    class="search"
+                    size="small"
+                    @change="handelSearch"
+            >
+            </el-input>
+        </el-menu>
+    </div>
+</div>
