@@ -28,6 +28,7 @@
 .el-menu-item i{
     font-size: 2rem;
     color: #fff;
+    padding-right: 1rem;
 }
 /*改变默认悬停样式*/
 .el-menu-item:hover{
