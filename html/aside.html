@@ -1,0 +1,62 @@
+<div>
+    <link rel="stylesheet" href="../css/aside.css"/>
+    <script src="../js/aside.js"></script>
+    <!--公共侧边栏-->
+    <div id="aside-wrap">
+        <!--    博主信息    -->
+        <div class="blogger-info aside-base">
+            <img src="" alt="博主头像" class="blogger-img">
+            <p id="test">昵称：{{bloggerInfo.nickname}}</p>
+            <p>邮箱：{{bloggerInfo.email}}</p>
+            <p>职业：后端开发工程师</p>
+            <!--    图标    -->
+            <ul id="blogger-icon-ul">
+                <li><img src="../img/QQ.png" alt="QQ"></li>
+                <li><img src="../img/weixin.png" alt="微信"></li>
+                <li><img src="../img/email.png" alt="邮箱"></li>
+                <li><img src="../img/jianshu.png" alt="简书"></li>
+            </ul>
+        </div>
+        <!--    访问量、点赞量、回复量    -->
+        <div class="blog-info">
+            <ul>
+                <li>
+                    <p>访问量</p>
+                    <p>0</p>
+                </li>
+                <li>
+                    <p>点赞量</p>
+                    <p>0</p>
+                </li>
+                <li>
+                    <p>回复量</p>
+                    <p>0</p>
+                </li>
+            </ul>
+        </div>
+        <!--    广告轮播图    -->
+        <div class="ad aside-base">
+            <el-carousel trigger="click" height="150px">
+                <el-carousel-item v-for="item in 4" :key="item">
+                    <img src="" alt="">
+                </el-carousel-item>
+            </el-carousel>
+        </div>
+        <!--    情侣小空间    -->
+        <div class="love aside-base">
+            <p class="aside-title">情侣小空间</p>
+            <div class="love-img-div">
+                <img src="" alt="男方头像" class="love-header-img">
+                <img src="../img/love.png" alt="爱心" class="love-icon">
+                <img src="" alt="女方头像" class="love-header-img">
+            </div>
+            <p class="love-time">相恋 1922 天 18 时 36 秒</p>
+        </div>
+        <!--    热门文章    -->
+        <div class="aside-base"></div>
+        <!--    最新文章    -->
+        <div></div>
+        <!--    站点信息    -->
+        <div></div>
+    </div>
+</div>

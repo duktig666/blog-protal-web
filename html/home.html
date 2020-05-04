@@ -12,19 +12,18 @@
     <title>个人博客</title>
     <link rel="stylesheet" href="../plugins/element/element-ui-index.css"/>
     <link rel="stylesheet" href="../css/common.css"/>
-    <link rel="stylesheet" href="../css/index.css"/>
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_5dv66rar8ta.css">
+    <link rel="stylesheet" href="../css/home.css"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_dml1ypme9z4.css">
     <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
     <script src="../plugins/vue/vue-2.6.11.js"></script>
     <script src="../plugins/element/element-ui-index.js"></script>
     <script src="../js/common.js"></script>
-    <script src="../js/index.js"></script>
 </head>
 <body>
 <!--头部-->
 <header id="header"></header>
 <script>
-    $('#header').load('./top.html?activeIndex=1');
+    $('#header').load('./top.html');
 </script>
 <!--主体-->
 <div class="content">
@@ -35,22 +34,10 @@
         <!--    博客信息    -->
     </section>
     <!--  侧边栏  -->
-    <aside>
-        <!--    博主信息    -->
-        <div></div>
-        <!--    访问量、点赞量、回复量    -->
-        <div></div>
-        <!--    广告轮播图    -->
-        <div></div>
-        <!--    情侣小空间    -->
-        <div></div>
-        <!--    热门文章    -->
-        <div></div>
-        <!--    最新文章    -->
-        <div></div>
-        <!--    站点信息    -->
-        <div></div>
-    </aside>
+    <aside id="aside"></aside>
+    <script>
+        $('#aside').load('./aside.html');
+    </script>
 </div>
 <!--尾部-->
 <footer></footer>

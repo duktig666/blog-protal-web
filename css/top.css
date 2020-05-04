@@ -3,7 +3,7 @@
 }
 
 /*导航栏内容*/
-.menu {
+#nav {
     width: 120rem;
     margin: auto;
     color: #66b1ff;
