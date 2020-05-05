@@ -13,8 +13,9 @@
     font-weight: bold;
     padding: 2rem 0;
 }
-.content p {
-    height: 6rem;
+.txt {
+    min-height: 2rem;
+    max-height: 6rem;
     line-height: 2rem;
     font-size: 1.5rem;
     overflow: hidden;
