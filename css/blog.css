@@ -1,16 +1,11 @@
-
-.blog-contents {
-    width: 85rem;
-    background-color: #ffffff;
-    margin-bottom: 50rem;
-    padding: 1rem 0;
-}
 .blog-content {
-    width: 80rem;
+    width: 81rem;
     height: 21rem;
     margin: 2rem auto;
+    background-color: #ffffff;
     border: 1px solid #8c939d;
-    padding: 0 1rem;
+    border-radius: 1rem;
+    padding: 0 2rem;
 
 }
 .title {
@@ -43,5 +38,6 @@
 .page {
     display: flex;
     justify-content: center;
-    padding-bottom: 1rem;
+    background-color: #ffffff;
+    padding: 1rem 0;
 }

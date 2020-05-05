@@ -42,8 +42,19 @@
         </div>
         <!--    博客信息    -->
         <div id="blogList">
-            <div class="blog-contents">
-                <blog-message :items="items"></blog-message>
+            <blog-message :items="items"></blog-message>
+            <!--      分页      -->
+            <div class="page">
+                <el-pagination
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        background
+                        :current-page="pageInfo.currentPage"
+                        :page-sizes="[1,10, 15, 20, 50,100]"
+                        :page-size="pageInfo.rows"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="totalSize">
+                </el-pagination>
             </div>
         </div>
     </section>
