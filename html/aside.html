@@ -5,8 +5,8 @@
     <div id="aside-wrap">
         <!--    博主信息    -->
         <div class="blogger-info aside-base">
-            <img src="" alt="博主头像" class="blogger-img">
-            <p id="test">昵称：{{bloggerInfo.nickname}}</p>
+            <img :src="bloggerInfo.picture" alt="博主头像" class="blogger-img">
+            <p id="test">昵称：{{ bloggerInfo.nickname }}</p>
             <p>邮箱：{{bloggerInfo.email}}</p>
             <p>职业：后端开发工程师</p>
             <!--    图标    -->
@@ -22,21 +22,21 @@
             <ul>
                 <li>
                     <p>访问量</p>
-                    <p>0</p>
+                    <p>{{blogCount.visitNumbers}}</p>
                 </li>
                 <li>
                     <p>点赞量</p>
-                    <p>0</p>
+                    <p>{{blogCount.likeNumber}}</p>
                 </li>
                 <li>
                     <p>回复量</p>
-                    <p>0</p>
+                    <p>{{blogCount.observeNumber}}</p>
                 </li>
             </ul>
         </div>
         <!--    广告轮播图    -->
         <div class="ad aside-base">
-            <el-carousel trigger="click" height="150px">
+            <el-carousel trigger="click" height="20rem" indicator-position="none" class="carousel">
                 <el-carousel-item v-for="item in 4" :key="item">
                     <img src="" alt="">
                 </el-carousel-item>
@@ -53,10 +53,18 @@
             <p class="love-time">相恋 1922 天 18 时 36 秒</p>
         </div>
         <!--    热门文章    -->
-        <div class="aside-base"></div>
+        <div class="aside-base aside-blog">
+            <p class="aside-title">热门文章<i class="iconfont icon-gengduo aside-more"></i></p>
+            <ul class="aside-blog-title">
+                <li v-for="blogNewInfo in blogNewInfos" :key="blogNewInfo.blog.id">{{blogNewInfo.blog.title}}</li>
+            </ul>
+        </div>
         <!--    最新文章    -->
-        <div></div>
-        <!--    站点信息    -->
-        <div></div>
+        <div class="aside-base aside-blog">
+            <p class="aside-title">最新文章<i class="iconfont icon-gengduo aside-more"></i></p>
+            <ul class="aside-blog-title">
+                <li v-for="blogHotInfo in blogHotInfos" :key="blogHotInfo.blog.id">{{blogHotInfo.blog.title}}</li>
+            </ul>
+        </div>
     </div>
 </div>

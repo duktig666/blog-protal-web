@@ -1,14 +1,15 @@
 /*侧边栏*/
 #aside-wrap {
-    width: 35rem;
+    width: 30rem;
 }
 
 .aside-title {
     font-size: 2rem;
     font-weight: bold;
+    text-align: center;
 }
 
-.aside-base{
+.aside-base {
     background-color: #fff;
     border-radius: 1rem;
 }
@@ -64,7 +65,7 @@
 .blog-info li {
     background-color: #fff;
     text-align: center;
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 1rem;
 }
 
@@ -74,6 +75,9 @@
 }
 
 /*广告轮播图*/
+.carousel{
+    border-radius: 1rem;
+}
 .el-carousel__item h3 {
     color: #475669;
     font-size: 14px;
@@ -94,7 +98,6 @@
 .love {
     margin: 2rem 0;
     padding: 3rem;
-    text-align: center;
 }
 
 .love-img-div {
@@ -120,4 +123,32 @@
     font-size: 1.6rem;
     font-weight: bold;
     color: #d4237a;
+    text-align: center;
 }
+
+/*热门文章和最新文章*/
+.aside-blog {
+    padding: 3rem;
+    margin-bottom: 2rem;
+}
+
+.aside-more {
+    float: right;
+    font-size: 2rem;
+}
+
+.aside-blog-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.aside-blog-title>li{
+    font-size: 1.6rem;
+    line-height: 3rem;
+    padding-top: 1rem;
+}
+
+
+
