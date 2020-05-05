@@ -13,26 +13,39 @@
     <link rel="stylesheet" href="../plugins/element/element-ui-index.css"/>
     <link rel="stylesheet" href="../css/common.css"/>
     <link rel="stylesheet" href="../css/home.css"/>
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_rw3qbjw9f7i.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_dml1ypme9z4.css">
+    <link rel="stylesheet" href="../css/blog.css">
     <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
     <script src="../plugins/vue/vue-2.6.11.js"></script>
     <script src="../plugins/element/element-ui-index.js"></script>
     <script src="../js/common.js"></script>
-    <link rel="stylesheet" href="../css/aside.css"/>
+    <script src="../js/home.js"></script>
+    <script src="../js/blog.js"></script>
 </head>
 <body>
 <!--头部-->
 <header id="header"></header>
 <script>
-    $('#header').load('./top.html');
+    $('#header').load('./top.html?activeIndex=1');
 </script>
 <!--主体-->
 <div class="content">
     <!--正文-->
     <section>
         <!--    轮播图    -->
-
+        <div class="block" id="carousel">
+            <el-carousel trigger="click" height="25rem">
+                <el-carousel-item v-for="(item,index) in items" :key="index">
+                    <img :src="item.url" alt="轮播图">
+                </el-carousel-item>
+            </el-carousel>
+        </div>
         <!--    博客信息    -->
+        <div id="blogList">
+            <div class="blog-contents">
+                <blog-message :items="items"></blog-message>
+            </div>
+        </div>
     </section>
     <!--  侧边栏  -->
     <aside id="aside"></aside>

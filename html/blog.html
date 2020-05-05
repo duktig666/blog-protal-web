@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
+    <script src="../plugins/vue/vue-2.6.11.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+<body>
+<link rel="stylesheet" href="../css/blog.css">
+<div >
+    <div class="contents" id="app">
+        <div v-for="item in item.blogLabelList">
+            {{item.label}}
+        </div>
+        <div class="content" v-for="item in items">
+            <div>
+                <h3>{{item.blog.title}}</h3>
+                <p>CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                    CSS change detected D:\Program Files\IDEA\个人博客项目\blog-protal-web\css\blog.css
+                </p>
+            </div>
+            <div>
+                <!--  留言量 -->
+                <span>
+                <i></i>
+                2259
+            </span>
+                <!--  点赞量 -->
+                <span>
+                <i></i>
+                2259
+            </span>
+                <!--  访问量 -->
+                <span>
+                <i></i>
+                2259
+            </span>
+                <span>
+                <button>{{abc}}</button>
+            </span>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        new Vue({
+            el: '#app',
+            data: {
+                abc:"123",
+                items:[
+                ],
+            },
+            mounted() {
+                this.getBlogs();
+                console.log(this.items)
+            },
+            methods: {
+                getBlogs(){
+                    $.get(baseUrl + "/api/blog/all", function (data, status, xhr) {
+                        this.items=data.items;
+                        console.log(this.items)
+                    },"json");
+                }
+            }
+        })
+    })
+
+</script>
+</body>
+</html>

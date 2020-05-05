@@ -1,0 +1,47 @@
+
+.blog-contents {
+    width: 85rem;
+    background-color: #ffffff;
+    margin-bottom: 50rem;
+    padding: 1rem 0;
+}
+.blog-content {
+    width: 80rem;
+    height: 21rem;
+    margin: 2rem auto;
+    border: 1px solid #8c939d;
+    padding: 0 1rem;
+
+}
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 2rem 0;
+}
+.content p {
+    height: 6rem;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    overflow: hidden;
+}
+.line {
+    margin: 2rem 0;
+    border-bottom: 1px solid #8c939d;
+}
+.num {
+    font-size: 1.6rem;
+    height: 3rem;
+    line-height: 3rem;
+}
+.num span {
+    margin-right: 1rem;
+}
+.more {
+    float: right;
+}
+/*分页*/
+.page {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+}

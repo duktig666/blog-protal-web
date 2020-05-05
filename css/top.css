@@ -1,5 +1,6 @@
 .header-top {
     height: 20rem;
+    /*border: 1rem #3a8ee6 solid;*/
 }
 
 /*导航栏内容*/
@@ -54,6 +55,7 @@
 
 /*导航栏之上样式*/
 .header-top-content {
+    position: relative;
     width: 120rem;
     margin: auto;
 }
