@@ -34,5 +34,5 @@ Vue.component('blog-message',{
                 </div>
             </div>
             `
-})
+});
 

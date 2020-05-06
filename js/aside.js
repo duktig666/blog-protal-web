@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     //请求博客信息
     function getBlogInfoNewOrHot(isNew) {
-        $.get(baseUrl + "/api/blog/all",
+        $.get(baseUrl + "/api/blog/all/single",
             {
                 currentPage: 0,
                 rows: 10,

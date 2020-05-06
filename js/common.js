@@ -24,7 +24,18 @@ function timeLag(oldTime) {//di作为一个变量传进来
     let leave3 = leave2 % (60 * 1000);
     //计算相差秒数
     let seconds = Math.floor(leave3 / 1000);
-    return " "+dayDiff + " 天 " + hours + " 时 " + minutes + " 分 " + seconds + " 秒 ";
+    return " " + dayDiff + " 天 " + hours + " 时 " + minutes + " 分 " + seconds + " 秒 ";
+}
+
+//随机生成16进制颜色
+function getRandomColor() {
+    let str = "#";
+    let arr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+    for (let i = 0; i < 6; i++) {
+        let num = parseInt(Math.random() * 16);
+        str += arr[num];
+    }
+    return str;
 }
 
 

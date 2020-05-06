@@ -56,14 +56,14 @@
         <div class="aside-base aside-blog">
             <p class="aside-title">热门文章<i class="iconfont icon-gengduo aside-more"></i></p>
             <ul class="aside-blog-title">
-                <li v-for="blogNewInfo in blogNewInfos" :key="blogNewInfo.blog.id">{{blogNewInfo.blog.title}}</li>
+                <li v-for="blogNewInfo in blogNewInfos" :key="blogNewInfo.id">{{blogNewInfo.title}}</li>
             </ul>
         </div>
         <!--    最新文章    -->
         <div class="aside-base aside-blog">
             <p class="aside-title">最新文章<i class="iconfont icon-gengduo aside-more"></i></p>
             <ul class="aside-blog-title">
-                <li v-for="blogHotInfo in blogHotInfos" :key="blogHotInfo.blog.id">{{blogHotInfo.blog.title}}</li>
+                <li v-for="blogHotInfo in blogHotInfos" :key="blogHotInfo.id">{{blogHotInfo.title}}</li>
             </ul>
         </div>
     </div>

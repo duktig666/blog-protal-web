@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8">
+    <title>时间轴</title>
+    <link rel="stylesheet" href="../plugins/element/element-ui-index.css"/>
+    <link rel="stylesheet" href="../plugins/vuetify/vuetify.min.css-2.2.26.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/time-line.css"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_dml1ypme9z4.css">
+    <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
+    <script src="../plugins/vue/vue-2.6.11.js"></script>
+    <script src="../plugins/element/element-ui-index.js"></script>
+    <script src="../plugins/vuetify/vuetify-2.2.26.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/time-line.js"></script>
+</head>
+<body>
+<!--头部-->
+<header id="header"></header>
+<script>
+    $('#header').load('./top.html?activeIndex=1');
+</script>
+<!--主体-->
+<div class="content">
+    <!--正文-->
+    <section>
+        <div id="time-line">
+            <!--      时间线     -->
+            <v-timeline>
+                <v-timeline-item
+                        v-for="(blogInfo,index) in blogInfos"
+                        :key="index"
+                        :color="randomColor[index]"
+                        small
+                >
+                    <template v-slot:opposite>
+                        <span :style="index%2==0?timeSpanStyle:''">{{blogInfo.createDate}}</span>
+                    </template>
+                    <div class="time-blog-title" :style="index%2==0?'':blogTitleStyle">
+                        {{blogInfo.title}}
+                    </div>
+                </v-timeline-item>
+            </v-timeline>
+            <!--      查看更多      -->
+            <p id="time-find-more">查看更多...</p>
+        </div>
+    </section>
+    <!--  侧边栏  -->
+    <aside id="aside"></aside>
+    <script>
+        $('#aside').load('./aside.html');
+    </script>
+</div>
+<!--尾部-->
+<footer></footer>
+</body>
+</html>

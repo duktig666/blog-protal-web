@@ -1,0 +1,29 @@
+
+#time-line {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 5rem;
+}
+
+.v-timeline:before {
+    left: 50%;
+    margin-left: -0.1rem;
+}
+
+.time-blog-title{
+    line-height: 2.5rem;
+    min-width: 10rem;
+    min-height: 3.5rem;
+    box-shadow: 0.1rem 0.1rem #aaa ;
+    padding: 1.5rem 1rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+#time-find-more{
+    min-width: 4rem;
+    margin: 3rem auto 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
