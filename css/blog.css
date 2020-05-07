@@ -1,11 +1,10 @@
 .blog-content {
     width: 81rem;
-    height: 21rem;
     margin: 2rem auto;
     background-color: #ffffff;
     border: 1px solid #8c939d;
     border-radius: 1rem;
-    padding: 0 2rem;
+    padding: 0 2rem 2rem;
 
 }
 .title {
@@ -16,7 +15,7 @@
 .txt {
     min-height: 2rem;
     max-height: 6rem;
-    line-height: 2rem;
+    line-height: 3rem;
     font-size: 1.5rem;
     overflow: hidden;
 }
@@ -41,4 +40,6 @@
     justify-content: center;
     background-color: #ffffff;
     padding: 1rem 0;
+    margin-top: 2rem;
+    border-radius: 1rem;
 }

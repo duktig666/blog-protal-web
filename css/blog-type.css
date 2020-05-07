@@ -1,0 +1,36 @@
+.blog-type-card {
+    background-color: #ffffff;
+    min-height: 15rem;
+    border-radius: 1rem;
+    padding-bottom: 2rem;
+}
+.blog-type-icon {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+.blog-type-icon span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.blog-type-list {
+    padding-left: 9rem;
+    text-align: center;
+}
+.blog-type-content {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 3.5rem 9rem 0 0;
+    padding: 0.5rem 1rem;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    display: inline-flex;
+    color: #ffffff;
+
+}
+.blog-type-map {
+    margin-top: 2rem;
+    background-color: #ffffff;
+    height: 20rem;
+    border-radius: 1rem;
+}

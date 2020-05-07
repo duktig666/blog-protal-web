@@ -3,13 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>博客类型</title>
-    <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
 </head>
 <body>
-    <!--头部-->
-    <header id="header"></header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人博客</title>
+    <link rel="stylesheet" href="../plugins/element/element-ui-index.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/blog-type.css"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_dml1ypme9z4.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
+    <script src="../plugins/vue/vue-2.6.11.js"></script>
+    <script src="../plugins/element/element-ui-index.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/blog-type.js"></script>
+    <script src="../js/blog.js"></script>
+</head>
+<body>
+<!--头部-->
+<header id="header"></header>
+<script>
+    $('#header').load('./top.html?activeIndex=1');
+</script>
+<!--主体-->
+<div class="content">
+    <!--正文-->
+    <section id="blog-type">
+        <!--    博客类型卡片    -->
+        <div class="blog-type-card">
+            <div class="blog-type-icon">
+                <span>文章分类</span>
+            </div>
+            <div class="blog-type-list">
+                <el-button type="text" class="blog-type-content"
+                     v-for="(type,index) in types"
+                     :key="index"
+                     :style="randomColor[index]"
+                     @click="getBlogByType(type.id)"
+                >
+                    {{type.type}}
+                </el-button>
+            </div>
+        </div>
+        <div class="blog-type-map">
+
+        </div>
+        <!--    博客信息    -->
+        <div>
+            <blog-message :items="items"></blog-message>
+            <!--      分页      -->
+            <div class="page">
+                <el-pagination
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        background
+                        :current-page="pageInfo.currentPage"
+                        :page-sizes="[1,10,15,20,50]"
+                        :page-size="pageInfo.rows"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="totalSize">
+                </el-pagination>
+            </div>
+        </div>
+    </section>
+    <!--  侧边栏  -->
+    <aside id="aside"></aside>
     <script>
-        $('#header').load('./top.html');
+        $('#aside').load('./aside.html');
     </script>
+</div>
+<!--尾部-->
+<footer></footer>
+</body>
+</html>
 </body>
 </html>

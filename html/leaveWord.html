@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人博客</title>
+    <link rel="stylesheet" href="../plugins/element/element-ui-index.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/leaveWord.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_dml1ypme9z4.css">
+    <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
+    <script src="../plugins/vue/vue-2.6.11.js"></script>
+    <script src="../plugins/element/element-ui-index.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/leaveWord.js"></script>
+</head>
+<body>
+    <!--头部-->
+    <header id="header"></header>
+    <script>
+        $('#header').load('./top.html?activeIndex=1');
+    </script>
+    <!--主体-->
+    <div class="content" id="leaveWord">
+        <!--  留言及名言  -->
+        <div class="leave-word-top">
+            <div class="leave-word-title">留言互动</div>
+            <div class="leave-word-say">
+                <span>
+                    一个人可以走的很快，一群人走的更远。
+                </span><br>
+                <span>
+                    欢迎留言，期待与你的交流，让我们共同进步！
+                </span>
+            </div>
+        </div>
+        <!--   留言区域  -->
+        <div class="leave-word-message">
+            <div class="leave-word-message-title">
+                <span>发表我的评论</span>
+            </div>
+            <div class="user-message">
+                <span class="photo">
+                    *请选择头像
+                        <el-select v-model="value" placeholder="请选择">
+                            <el-option
+                                    v-for="item in options"
+                                    :key="item.id"
+                                    :label="item.src"
+                                    :value="item.src">
+                                <img :src="item.src" style="height:3rem;width: 3rem;border-radius: 3rem">
+                            </el-option>
+                        </el-select>
+                </span>
+                <span class="nickname">
+                    *昵称
+                    <el-input
+                        placeholder="请输入昵称"
+                        v-model="nickname"
+                        clearable>
+                    </el-input>
+                </span>
+                <span class="email">
+                    *邮箱
+                    <el-input
+                            placeholder="请输入邮箱"
+                            v-model="email"
+                            clearable>
+                    </el-input>
+                </span>
+            </div>
+            <div class="leave-word-write" >
+                <el-input
+                        type="textarea"
+                        :rows="5"
+                        placeholder="请输入内容"
+                        v-model="textarea">
+                </el-input>
+                <el-button type="primary" class="summit" @click="setLeaveWord">提交留言</el-button>
+            </div>
+            <div class="line"></div>
+            <div class="look-leave-word">
+                <div class="user-num">
+                    <i class="iconfont icon-liuyan"></i>
+                    {{totalSize}}个小伙伴正在吐槽
+                </div>
+                <div class="leave-word-content" v-for="(item,index) in leaveWordMessage" :key="index">
+                    <div>
+                        <img :src="item.user.picture" alt="" class="user-photo">
+                        <span>{{item.user.nickname}}</span>
+                        <span class="leave-word-time">{{item.leaveWord.createDate}}</span>
+                    </div>
+                    <div class="leave-word-txt">
+                        {{item.leaveWord.leaveContent}}
+                    </div>
+                    <div class="content-line"></div>
+                    <div v-if="item.leaveWord.replyContent!=null">
+                        <div class="blogger">
+                            <img src="../img/code.jpg" alt="" class="user-photo">
+                            <span>站长回复</span>
+                            <span class="leave-word-time">{{item.leaveWord.updateDate}}</span>
+                            <div class="leave-word-txt">
+                                {{item.leaveWord.replyContent}}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--      分页      -->
+            <div class="page">
+                <el-pagination
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        background
+                        :current-page="pageInfo.currentPage"
+                        :page-sizes="[5,10,15,20,50]"
+                        :page-size="pageInfo.rows"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="totalSize">
+                </el-pagination>
+            </div>
+        </div>
+    </div>
+    <!--尾部-->
+<footer></footer>
+</body>
+</html>
+</body>
+</html>

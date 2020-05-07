@@ -19,11 +19,33 @@ li {
 a:link, a:visited {
     text-decoration: none;
 }
-
-
 .content {
     width: 120rem;
-    margin: auto;
+    margin: 2rem auto;
+}
+#aside {
+    width: 30rem;
+    float: right;
+}
+section {
+    width:85rem;
+    height:50rem;
+    float: left;
+}
+.el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 150px;
+    margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
 }
 
 #aside {
@@ -32,7 +54,6 @@ a:link, a:visited {
 }
 
 section {
-    margin-top: 2rem;
     width: 85rem;
     height: 50rem;
     float: left;
@@ -53,5 +74,13 @@ section {
 .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
 }
-
+/*分页*/
+.page {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
 
