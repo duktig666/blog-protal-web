@@ -3,8 +3,10 @@ html {
 }
 
 body {
-    background: url("../img/background-global.jpg") no-repeat center;
+    background-image: url("../img/background-global.jpg");
+    background-repeat: no-repeat;
     background-size: 100%;
+    background-attachment:fixed
 }
 
 * {

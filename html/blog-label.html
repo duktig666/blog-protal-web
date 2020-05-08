@@ -1,0 +1,83 @@
+<!DOClabel html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客标签</title>
+</head>
+<body>
+<!DOClabel html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人博客</title>
+    <link rel="stylesheet" href="../plugins/element/element-ui-index.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/blog-label.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_dml1ypme9z4.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
+    <script src="../plugins/vue/vue-2.6.11.js"></script>
+    <script src="../plugins/element/element-ui-index.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/blog.js"></script>
+    <script src="../js/blog-label.js"></script>
+</head>
+<body>
+<!--头部-->
+<header id="header"></header>
+<script>
+    $('#header').load('./top.html?activeIndex=1');
+</script>
+<!--主体-->
+<div class="content">
+    <!--正文-->
+    <section id="blog-label">
+        <!--    博客标签卡片    -->
+        <div class="blog-label-card">
+            <div class="blog-label-icon">
+                <span>文章标签</span>z
+            </div>
+            <div class="blog-label-list">
+                <el-button label="text" class="blog-label-content"
+                           v-for="(label,index) in labels"
+                           :key="index"
+                           :style="randomColor[index]"
+                           @click="getBlogByLabel(label.id)"
+                >
+                    {{label.label}}
+                </el-button>
+            </div>
+        </div>
+        <div class="blog-label-map">
+
+        </div>
+        <!--    博客信息    -->
+        <div>
+            <blog-message :items="items"></blog-message>
+            <!--      分页      -->
+            <div class="page">
+                <el-pagination
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        background
+                        :current-page="pageInfo.currentPage"
+                        :page-sizes="[1,10,15,20,50]"
+                        :page-size="pageInfo.rows"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="totalSize">
+                </el-pagination>
+            </div>
+        </div>
+    </section>
+    <!--  侧边栏  -->
+    <aside id="aside"></aside>
+    <script>
+        $('#aside').load('./aside.html');
+    </script>
+</div>
+<!--尾部-->
+<footer></footer>
+</body>
+</html>
+</body>
+</html>
