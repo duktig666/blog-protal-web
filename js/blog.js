@@ -28,11 +28,16 @@ Vue.component('blog-message',{
                             <span>发布时间：{{item.createDate}}</span>
                         </span>
                         <span class='more'>
-                            <el-button type='primary' size='mini'>查看更多</el-button>
+                            <el-button type='primary' size='mini' @click="findBlogDetail(item.id)">查看更多</el-button>
                         </span>
                     </div>
                 </div>
             </div>
-            `
+            `,
+    methods:{
+        findBlogDetail(blogId){
+            window.open("../html/blog-detail.html?"+blogId);
+        }
+    }
 });
 
