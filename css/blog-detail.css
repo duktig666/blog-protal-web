@@ -1,0 +1,39 @@
+
+#blog-detail {
+    border-radius: 1rem;
+    background-color: #fff;
+    padding: 3rem 3rem;
+}
+
+#blog-content {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+}
+
+.blog-detail-title {
+    text-align: center;
+    font-size: 2.6rem;
+}
+
+.blog-detail-time {
+    margin-right: 1rem;
+}
+
+.blog-detail-label {
+    margin-right: 1rem;
+}
+.blog-detail-about{
+    margin-top: 1rem;
+}
+.blog-detail-about span {
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.blog-detail-span-left{
+    margin-left: 1rem;
+}
+
+.visit-i{
+    margin-right: 0.5rem;
+}

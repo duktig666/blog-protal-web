@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客详情</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_4rlhr6iqdhe.css">
+    <link rel="stylesheet" href="../plugins/element/element-ui-index.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/blog-detail.css"/>
+    <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
+    <script src="../plugins/vue/vue-2.6.11.js"></script>
+    <script src="../plugins/element/element-ui-index.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/blog-detail.js"></script>
+</head>
+<body>
+<!--头部-->
+<header id="header"></header>
+<script>
+    $('#header').load('./top.html?activeIndex=1');
+</script>
+<!--主体-->
+<div class="content">
+    <!--正文-->
+    <section>
+        <div id="blog-detail">
+            <h1 class="blog-detail-title">{{blogInfos.blog.title}}</h1>
+            <div class="blog-detail-about">
+                <span class="blog-detail-time">发布时间：{{blogInfos.blog.createDate}}</span>
+                <i class="iconfont icon-liulan visit-i"></i><span>{{blogInfos.blog.visitNumber}}</span>
+                <span class="blog-detail-span-left">博客类型：</span>
+                <el-tag class="blog-detail-label">{{blogInfos.blogType.type}}</el-tag>
+                <span class="blog-detail-span-left">博客标签：</span>
+                <el-tag v-for="label in blogInfos.blogLabels" :key="label.id" class="blog-detail-label">{{label.label}}</el-tag>
+            </div>
+            <div id="blog-content"></div>
+            <div id="blog-observe">
+
+            </div>
+        </div>
+
+    </section>
+    <!--  侧边栏  -->
+    <aside id="aside"></aside>
+    <script>
+        $('#aside').load('./aside.html');
+    </script>
+</div>
+<!--尾部-->
+<footer></footer>
+
+</body>
+</html>
