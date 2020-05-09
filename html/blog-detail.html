@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_4rlhr6iqdhe.css">
     <link rel="stylesheet" href="../plugins/element/element-ui-index.css"/>
     <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/top.css"/>
     <link rel="stylesheet" href="../css/blog-detail.css"/>
     <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
     <script src="../plugins/vue/vue-2.6.11.js"></script>
@@ -15,11 +16,16 @@
 </head>
 <body>
 <!--头部-->
-<header id="header"></header>
-<script>
-    $('#header').load('./top.html?activeIndex=1');
-</script>
-<!--主体-->
+<header id="header">
+    <div class="header-top">
+        <img src="../img/cloud.png" alt="云" id="cloud">
+        <img src="../img/sun.png" alt="阳光" id="sun">
+        <div class="header-top-content">
+            <img src="../img/blog-logo.png" alt="logo" class="blog-logo">
+            <img src="../img/blog-say.png" alt="名言" class="blog-say">
+        </div>
+    </div>
+</header>
 <div class="content">
     <!--正文-->
     <section>
@@ -27,18 +33,94 @@
             <h1 class="blog-detail-title">{{blogInfos.blog.title}}</h1>
             <div class="blog-detail-about">
                 <span class="blog-detail-time">发布时间：{{blogInfos.blog.createDate}}</span>
-                <i class="iconfont icon-liulan visit-i"></i><span>{{blogInfos.blog.visitNumber}}</span>
+                <i class="iconfont icon-liulan visit-i"><span>{{blogInfos.blog.visitNumber}}</span></i>
                 <span class="blog-detail-span-left">博客类型：</span>
                 <el-tag class="blog-detail-label">{{blogInfos.blogType.type}}</el-tag>
                 <span class="blog-detail-span-left">博客标签：</span>
-                <el-tag v-for="label in blogInfos.blogLabels" :key="label.id" class="blog-detail-label">{{label.label}}</el-tag>
+                <el-tag v-for="label in blogInfos.blogLabels" :key="label.id" class="blog-detail-label">
+                    {{label.label}}
+                </el-tag>
             </div>
             <div id="blog-content"></div>
-            <div id="blog-observe">
+            <!--       博客页脚     -->
+            <div class="blog-detail-footer">
+                <i class="iconfont icon-liulan visit-i"><span>{{blogInfos.blog.visitNumber}}</span></i>
+                <i class="iconfont icon-shoucang visit-i"><span>{{blogInfos.blog.likeNumber}}</span></i>
+                <i class="iconfont icon-pinglun visit-i"><span>{{blogInfos.blog.observeNumber}}</span></i>
+            </div>
 
+            <!--      博客评论      -->
+            <div id="blog-observe">
+                <!--      发表评论      -->
+                <div class="leave-word-message">
+                    <div class="leave-word-message-title">
+                        <p id="observe-title">发表我的评论</p>
+                        <p id="my-observe-user">{{observeName}}</p>
+                        <p id="my-observe-user-content">{{observingContent}}</p>
+                        <el-tag id="clear-observe-tag" @click="clearObserveUser" round size="mini">重置评论对象</el-tag>
+                    </div>
+                    <div class="user-message">
+                        <span class="photo">
+                            *请选择头像
+                                <el-select v-model="headUrl" placeholder="请选择">
+                                    <el-option
+                                            v-for="item in options"
+                                            :key="item.id"
+                                            :label="item.src"
+                                            :value="item.src">
+                                        <img :src="item.src" style="height:3rem;width: 3rem;border-radius: 3rem">
+                                    </el-option>
+                                </el-select>
+                        </span>
+                        <span class="nickname">
+                            *昵称
+                            <el-input
+                                    placeholder="请输入昵称"
+                                    v-model="nickname"
+                                    clearable>
+                            </el-input>
+                        </span>
+                        <span class="email">
+                            *邮箱
+                            <el-input
+                                    placeholder="请输入邮箱"
+                                    v-model="email"
+                                    clearable>
+                            </el-input>
+                        </span>
+                    </div>
+                    <div class="leave-word-write">
+                        <el-input
+                                type="textarea"
+                                :rows="5"
+                                placeholder="请输入内容"
+                                v-model="observeContent">
+                        </el-input>
+                        <el-button type="primary" class="summit" @click="saveBlogObserve">提交留言</el-button>
+                    </div>
+                </div>
+                <!--    展示已有评论    -->
+                <div >
+                    <el-tree
+                            ref="tree"
+                            :data="observes"
+                            :props="defaultProps"
+                    >
+                        <div class="custom-tree-node" slot-scope="{ node, data }">
+                            <div class="observe-top">
+                                <img :src="data.user.picture" alt="头像" class="observe-header-img">
+                                <span class="observe-nickname">{{data.user.nickname}}</span>
+                                <span class="observe-user" v-text="data.lastId==null?'回复了博主':'回复了你'"></span>
+                                <el-tag class="observe-tag" @click="getLastId(data)" round size="mini">回复</el-tag>
+                                <span class="observe-date">{{data.createDate}}</span>
+                            </div>
+
+                            <p class="observe-content">{{data.observeContent}}</p>
+                        </div>
+                    </el-tree>
+                </div>
             </div>
         </div>
-
     </section>
     <!--  侧边栏  -->
     <aside id="aside"></aside>
@@ -48,6 +130,5 @@
 </div>
 <!--尾部-->
 <footer></footer>
-
 </body>
 </html>

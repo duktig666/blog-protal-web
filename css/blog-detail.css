@@ -22,18 +22,143 @@
 .blog-detail-label {
     margin-right: 1rem;
 }
-.blog-detail-about{
-    margin-top: 1rem;
+
+.blog-detail-about {
+    margin-top: 2rem;
 }
+
 .blog-detail-about span {
     display: inline-block;
     font-size: 1.2rem;
 }
 
-.blog-detail-span-left{
+.blog-detail-span-left {
     margin-left: 1rem;
 }
 
-.visit-i{
+.visit-i {
     margin-right: 0.5rem;
 }
+
+.blog-detail-footer {
+    text-align: right;
+}
+
+/*博客评论*/
+
+#blog-observe {
+    margin-top: 4rem;
+}
+
+.leave-word-message {
+    width: 80rem;
+    margin: 0 auto;
+    border: 1px #a0cfff solid;
+}
+
+.leave-word-message-title {
+    font-size: 2rem;
+    margin: 2rem 1rem;
+}
+
+.user-message {
+    display: flex;
+    align-content: center;
+    font-size: 1.8rem;
+    height: 5rem;
+    line-height: 5rem;
+    border: 1px solid #c6e2ff;
+}
+
+.user-message span {
+    margin-left: 3rem;
+}
+
+.leave-word-write {
+    margin: 5rem 0 2rem 0;
+}
+
+.summit {
+    margin-top: 2rem;
+}
+
+/*评论显示*/
+#observe-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+#my-observe-user {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+#clear-observe-tag {
+    width: 10rem;
+    height: 3rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 85%;
+}
+
+#my-observe-user-content {
+    font-size: 1.4rem;
+}
+
+.custom-tree-node {
+    width: 100%;
+}
+
+.el-tree-node__content {
+    height: 8rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: 0.1rem solid #eee;
+}
+
+.observe-content {
+    font-size: 1.4rem;
+    margin: 1rem 0;
+}
+
+.observe-top {
+    line-height: 3rem;
+    height: 3rem;
+}
+
+.observe-top span {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.observe-header-img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 3rem;
+}
+
+.observe-nickname {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+}
+
+.observe-user {
+    margin: 0 1rem;
+    font-size: 1.2rem;
+}
+
+.observe-date {
+    float: right;
+    margin-right: 2rem;
+}
+
+.observe-tag {
+    float: right;
+}
+
+
