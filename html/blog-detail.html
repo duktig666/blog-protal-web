@@ -30,25 +30,26 @@
     <!--正文-->
     <section>
         <div id="blog-detail">
-            <h1 class="blog-detail-title">{{blogInfos.blog.title}}</h1>
-            <div class="blog-detail-about">
-                <span class="blog-detail-time">发布时间：{{blogInfos.blog.createDate}}</span>
-                <i class="iconfont icon-liulan visit-i"><span>{{blogInfos.blog.visitNumber}}</span></i>
-                <span class="blog-detail-span-left">博客类型：</span>
-                <el-tag class="blog-detail-label">{{blogInfos.blogType.type}}</el-tag>
-                <span class="blog-detail-span-left">博客标签：</span>
-                <el-tag v-for="label in blogInfos.blogLabels" :key="label.id" class="blog-detail-label">
-                    {{label.label}}
-                </el-tag>
+            <div class="blog-detail-content">
+                <h1 class="blog-detail-title">{{blogInfos.blog.title}}</h1>
+                <div class="blog-detail-about">
+                    <span class="blog-detail-time">发布时间：{{blogInfos.blog.createDate}}</span>
+                    <i class="iconfont icon-liulan visit-i"><span>{{blogInfos.blog.visitNumber}}</span></i>
+                    <span class="blog-detail-span-left">博客类型：</span>
+                    <el-tag class="blog-detail-label">{{blogInfos.blogType.type}}</el-tag>
+                    <span class="blog-detail-span-left">博客标签：</span>
+                    <el-tag v-for="label in blogInfos.blogLabels" :key="label.id" class="blog-detail-label">
+                        {{label.label}}
+                    </el-tag>
+                </div>
+                <div id="blog-content"></div>
+                <!--       博客页脚     -->
+                <div class="blog-detail-footer">
+                    <i class="iconfont icon-liulan visit-i"><span>{{blogInfos.blog.visitNumber}}</span></i>
+                    <i class="iconfont icon-shoucang visit-i"><span>{{blogInfos.blog.likeNumber}}</span></i>
+                    <i class="iconfont icon-pinglun visit-i"><span>{{blogInfos.blog.observeNumber}}</span></i>
+                </div>
             </div>
-            <div id="blog-content"></div>
-            <!--       博客页脚     -->
-            <div class="blog-detail-footer">
-                <i class="iconfont icon-liulan visit-i"><span>{{blogInfos.blog.visitNumber}}</span></i>
-                <i class="iconfont icon-shoucang visit-i"><span>{{blogInfos.blog.likeNumber}}</span></i>
-                <i class="iconfont icon-pinglun visit-i"><span>{{blogInfos.blog.observeNumber}}</span></i>
-            </div>
-
             <!--      博客评论      -->
             <div id="blog-observe">
                 <!--      发表评论      -->
@@ -96,11 +97,11 @@
                                 placeholder="请输入内容"
                                 v-model="observeContent">
                         </el-input>
-                        <el-button type="primary" class="summit" @click="saveBlogObserve">提交留言</el-button>
                     </div>
+                    <el-button type="primary" class="summit" @click="saveBlogObserve">发表评论</el-button>
                 </div>
                 <!--    展示已有评论    -->
-                <div >
+                <div class="look-observe">
                     <el-tree
                             ref="tree"
                             :data="observes"
@@ -114,7 +115,6 @@
                                 <el-tag class="observe-tag" @click="getLastId(data)" round size="mini">回复</el-tag>
                                 <span class="observe-date">{{data.createDate}}</span>
                             </div>
-
                             <p class="observe-content">{{data.observeContent}}</p>
                         </div>
                     </el-tree>
@@ -129,6 +129,9 @@
     </script>
 </div>
 <!--尾部-->
-<footer></footer>
+<footer  id="footer"></footer>
+<script>
+    $('#footer').load('./foot.html');
+</script>
 </body>
 </html>

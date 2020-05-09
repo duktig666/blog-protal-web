@@ -46,7 +46,7 @@ $(document).ready(function () {
                     data:{
                         "currentPage": this.pageInfo.currentPage,// 当前页
                         "rows": this.pageInfo.rows,// 每页大小
-                        "sort": null,// 排序字段
+                        "sort": "id desc",// 排序字段
                         blogDimSearchStr: null, // 博客模糊查询所需数据
                     },
                     success:function(data) {

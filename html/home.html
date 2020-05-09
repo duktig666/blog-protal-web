@@ -24,9 +24,9 @@
 <body>
 <!--头部-->
 <header id="header"></header>
-<script>
-    $('#header').load('./top.html?activeIndex=1');
-</script>
+    <script>
+        $('#header').load('./top.html?activeIndex=1');
+    </script>
 <!--主体-->
 <div class="content">
     <!--正文-->
@@ -49,7 +49,7 @@
                         @current-change="handleCurrentChange"
                         background
                         :current-page="pageInfo.currentPage"
-                        :page-sizes="[10,15,20,50]"
+                        :page-sizes="[5,10,15,20,50]"
                         :page-size="pageInfo.rows"
                         layout="total, sizes, prev, pager, next, jumper"
                         :total="totalSize">
@@ -64,7 +64,10 @@
     </script>
 </div>
 <!--尾部-->
-<footer></footer>
+<footer  id="footer"></footer>
+<script>
+    $('#footer').load('./foot.html');
+</script>
 </body>
 </html>
 </body>

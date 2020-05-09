@@ -9,6 +9,9 @@
     justify-content: center;
     padding-top: 2rem;
 }
+.el-button:active {
+    color: #000000;
+}
 .blog-label-icon span {
     font-size: 2rem;
     font-weight: bold;

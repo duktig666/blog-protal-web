@@ -43,12 +43,12 @@
         <!--   留言区域  -->
         <div class="leave-word-message">
             <div class="leave-word-message-title">
-                <span>发表我的评论</span>
+                <span>随便吐槽点什么吧</span>
             </div>
             <div class="user-message">
                 <span class="photo">
                     *请选择头像
-                        <el-select v-model="value" placeholder="请选择">
+                        <el-select v-model="value" placeholder="请选择喜欢的头像">
                             <el-option
                                     v-for="item in options"
                                     :key="item.id"
@@ -78,39 +78,37 @@
             <div class="leave-word-write" >
                 <el-input
                         type="textarea"
-                        :rows="5"
+                        :rows="8"
                         placeholder="请输入内容"
                         v-model="textarea">
                 </el-input>
-                <el-button type="primary" class="summit" @click="setLeaveWord">提交留言</el-button>
             </div>
-            <div class="line"></div>
-            <div class="look-leave-word">
-                <div class="user-num">
-                    <i class="iconfont icon-liuyan"></i>
-                    {{totalSize}}个小伙伴正在吐槽
+            <el-button type="primary" class="summit" @click="setLeaveWord">提交留言</el-button>
+        </div>
+        <div class="look-leave-word">
+            <div class="user-num">
+                <i class="iconfont icon-liuyan"></i>
+                {{totalSize}}个小伙伴正在吐槽
+            </div>
+            <div class="leave-word-content" v-for="(item,index) in leaveWordMessage" :key="index">
+                <div class="leave-word-user">
+                    <img :src="item.user.picture" alt="" class="user-photo">
+                    <span>{{item.user.nickname}}</span>
+                    <span class="leave-word-time">{{item.leaveWord.createDate}}</span>
                 </div>
-                <div class="leave-word-content" v-for="(item,index) in leaveWordMessage" :key="index">
-                    <div>
-                        <img :src="item.user.picture" alt="" class="user-photo">
-                        <span>{{item.user.nickname}}</span>
-                        <span class="leave-word-time">{{item.leaveWord.createDate}}</span>
-                    </div>
-                    <div class="leave-word-txt">
-                        {{item.leaveWord.leaveContent}}
-                    </div>
-                    <div class="content-line"></div>
-                    <div v-if="item.leaveWord.replyContent!=null">
-                        <div class="blogger">
-                            <img src="../img/code.jpg" alt="" class="user-photo">
-                            <span>站长回复</span>
-                            <span class="leave-word-time">{{item.leaveWord.updateDate}}</span>
-                            <div class="leave-word-txt">
-                                {{item.leaveWord.replyContent}}
-                            </div>
+                <div class="leave-word-txt">
+                    {{item.leaveWord.leaveContent}}
+                </div>
+                <div class="content-line"></div>
+                <div v-if="item.leaveWord.replyContent!=null">
+                    <div class="blogger leave-word-user">
+                        <img src="../img/code.jpg" alt="" class="user-photo">
+                        <span>站长回复</span>
+                        <span class="leave-word-time">{{item.leaveWord.updateDate}}</span>
+                        <div class="leave-word-txt">
+                            {{item.leaveWord.replyContent}}
                         </div>
                     </div>
-
                 </div>
             </div>
             <!--      分页      -->
@@ -129,7 +127,10 @@
         </div>
     </div>
     <!--尾部-->
-<footer></footer>
+    <footer  id="footer"></footer>
+    <script>
+        $('#footer').load('./foot.html');
+    </script>
 </body>
 </html>
 </body>

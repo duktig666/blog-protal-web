@@ -29,7 +29,7 @@ $(document).ready(function () {
                 deep: true, // deep为true，会监视pageInfo的属性及属性中的对象属性变化
                 handler() {
                     // 变化后的回调函数
-                    this.getBlogByLabel(blogType.labelId);
+                    this.getBlogByLabel(labelId.labelId);
                 }
             },
         },
