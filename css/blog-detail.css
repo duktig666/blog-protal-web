@@ -1,5 +1,4 @@
 .blog-detail-content {
-    border-radius: 1rem;
     background-color: #fff;
     padding: 2rem 2rem;
 }
@@ -43,16 +42,11 @@
 }
 
 /*博客评论*/
-
-#blog-observe {
-}
-
 .leave-word-message {
-    margin: 1rem auto;
     padding: 2rem 2rem;
     background-color: #ffffff;
-    border-radius: 1rem;
-    border: 1px #a0cfff solid;
+    border-top: 1px #a0cfff solid;
+    border-bottom: 1px #a0cfff solid;
 
 }
 .leave-word-message-title {
@@ -88,11 +82,8 @@
 
 /*评论显示*/
 .look-observe {
-    margin: 0 auto;
     padding: 2rem 2rem;
     background-color: #ffffff;
-    border-radius: 1rem;
-    border: 1px #a0cfff solid;
 }
 #observe-title {
     text-align: center;

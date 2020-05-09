@@ -78,7 +78,7 @@
     border-radius: 1rem;
 }
 .content-line {
-    border: 1px solid #8c939d;
+    border: 0.1rem solid #8c939d;
     margin: 1rem 0;
 }
 .leave-word-time {
