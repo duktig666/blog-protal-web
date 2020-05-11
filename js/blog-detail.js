@@ -68,30 +68,6 @@ $(document).ready(function () {
             },
             //保存博客评论
             saveBlogObserve() {
-                // $.post(baseUrl + "/api/observe",
-                //     {
-                //         nickname: this.nickname,// 昵称
-                //         email: this.email,// 邮箱
-                //         picture: this.headUrl, //头像
-                //         blogId: this.blogId, //博客id
-                //         observeContent: this.observeContent,// 留言内容
-                //         lastId: this.lastId,
-                //     },
-                //     function (data, status, xhr) {
-                //         blogDetail.$message({
-                //             showClose: true,
-                //             message: "新增评论成功",
-                //             type: 'success'
-                //         });
-                //         blogDetail.getBlogObserve();
-                //         blogDetail.clearObserveUser();
-                //     }, "json").fail(function (error) {
-                //     blogDetail.$message({
-                //         showClose: true,
-                //         message: "新增评论失败：",
-                //         type: 'error'
-                //     });
-                // });
                 $.ajax({
                     url: baseUrl + "/api/observe",
                     dataType: "text",
@@ -111,6 +87,7 @@ $(document).ready(function () {
                             type: 'success'
                         });
                         blogDetail.getBlogObserve();
+                        blogDetail.getBlogInfo();
                         blogDetail.clearObserveUser();
                     },
                     error: function (error) {   //请求失败后的回调方法

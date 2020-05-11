@@ -45,7 +45,10 @@ $(document).ready(function () {
                         type: 'warn'
                     });
                 });
-            }
+            },
+            findBlogTimeLine(blogId){
+                window.open("../html/blog-detail.html?"+blogId);
+            },
         },
         mounted() {
             this.getBlogs();

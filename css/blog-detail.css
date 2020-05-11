@@ -2,6 +2,7 @@
     background-color: #fff;
     padding: 2rem 2rem;
 }
+
 #blog-content {
     font-size: 1.6rem;
     margin-top: 2rem;
@@ -49,10 +50,12 @@
     border-bottom: 1px #a0cfff solid;
 
 }
+
 .leave-word-message-title {
     font-size: 2rem;
     margin: 2rem 1rem;
 }
+
 .user-message {
     display: flex;
     align-content: center;
@@ -64,18 +67,22 @@
     border-radius: 1rem;
 
 }
+
 .user-message span {
     margin-left: 3rem;
 }
+
 .user-photo {
     width: 3rem;
     height: 3rem;
     border-radius: 3rem;
 }
+
 .leave-word-write {
     height: 10rem;
     margin: 2rem 0 2rem 0;
 }
+
 .summit {
     margin-top: 2rem;
 }
@@ -85,6 +92,7 @@
     padding: 2rem 2rem;
     background-color: #ffffff;
 }
+
 #observe-title {
     text-align: center;
     font-weight: bold;
@@ -161,6 +169,19 @@
 
 .observe-tag {
     float: right;
+}
+
+/*解决mavonEditor 有序无序列表不显示 common.css样式冲突*/
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    list-style: inherit;
 }
 
 

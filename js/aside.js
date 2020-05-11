@@ -13,6 +13,11 @@ $(document).ready(function () {
             blogHotInfos: '',
             //博客的总访问量、点赞量、评论量信息
             blogCount:'',
+        },
+        methods:{
+            findAsideBlog(blogId){
+                window.open("../html/blog-detail.html?"+blogId);
+            }
         }
     });
 

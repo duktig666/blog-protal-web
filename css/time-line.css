@@ -18,6 +18,11 @@
     padding: 1.5rem 1rem;
     font-weight: bold;
     font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.time-blog-title:hover{
+    color: #2196f3;
 }
 
 #time-find-more{

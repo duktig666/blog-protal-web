@@ -37,7 +37,11 @@
                     <template v-slot:opposite>
                         <span :style="index%2==0?timeSpanStyle:''">{{blogInfo.createDate}}</span>
                     </template>
-                    <div class="time-blog-title" :style="index%2==0?'':blogTitleStyle">
+                    <div
+                            class="time-blog-title"
+                            :style="index%2==0?'':blogTitleStyle"
+                            @click="findBlogTimeLine(blogInfo.id)"
+                    >
                         {{blogInfo.title}}
                     </div>
                 </v-timeline-item>

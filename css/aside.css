@@ -148,7 +148,10 @@
     font-size: 1.6rem;
     line-height: 3rem;
     padding-top: 1rem;
+    cursor: pointer;
 }
 
-
+.aside-blog-title>li:hover{
+    color: #2196f3;
+}
 
