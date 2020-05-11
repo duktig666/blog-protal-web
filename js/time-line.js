@@ -16,7 +16,7 @@ $(document).ready(function () {
             //当前页
             currentPage: 1,
             //每页数量：
-            rows: 20,
+            rows: 2,
         },
         watch: {
             currentPage: {

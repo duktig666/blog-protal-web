@@ -4,17 +4,19 @@
 }
 
 /*导航栏内容*/
-#nav {
+#top {
     width: 120rem;
     margin: auto;
     color: #66b1ff;
 }
 
-.search {
+.top-search {
     display: inline-block;
-    width: 30rem;
-    line-height: 6rem;
+    margin-top: 1rem;
     float: right;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 /*取消el-ui的导航栏的默认下边框*/
@@ -68,4 +70,57 @@
 
 .blog-say {
     margin-left: 30rem;
+}
+/*搜索输入框*/
+.el-dialog {
+    width: 40%;
+}
+.dialog_search {
+    float: left;
+    line-height: 3rem;
+}
+.el-input {
+    width: 70%;
+}
+.search_btn {
+    margin-left: 1rem;
+}
+.search-blog-content {
+    margin: 2rem auto;
+    background-color: #ffffff;
+    border: 1px solid #8c939d;
+    border-radius: 1rem;
+    padding: 0 2rem 2rem;
+
+}
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 2rem 0;
+}
+.txt {
+    min-height: 2rem;
+    max-height: 6rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    overflow: hidden;
+}
+.line {
+    margin: 2rem 0;
+    border-bottom: 1px solid #8c939d;
+}
+.num {
+    font-size: 1.6rem;
+    height: 2rem;
+    line-height: 2rem;
+}
+.more {
+    float: right;
+}
+#time-find-more{
+    min-width: 4rem;
+    margin: 3rem auto 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
 }

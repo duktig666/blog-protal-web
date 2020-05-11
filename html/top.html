@@ -2,55 +2,96 @@
 <div>
     <link rel="stylesheet" href="../css/top.css"/>
     <script src="../js/top.js"></script>
-    <!--导航栏顶部空间-->
-    <div class="header-top">
-        <img src="../img/cloud.png" alt="云" id="cloud">
-        <img src="../img/sun.png" alt="阳光" id="sun">
-        <div class="header-top-content">
-            <img src="../img/blog-logo.png" alt="logo" class="blog-logo">
-            <img src="../img/blog-say.png" alt="名言" class="blog-say">
+    <div id="top">
+
+        <!--导航栏顶部空间-->
+        <div class="header-top">
+            <img src="../img/cloud.png" alt="云" id="cloud">
+            <img src="../img/sun.png" alt="阳光" id="sun">
+            <div class="header-top-content">
+                <img src="../img/blog-logo.png" alt="logo" class="blog-logo">
+                <img src="../img/blog-say.png" alt="名言" class="blog-say">
+            </div>
         </div>
-    </div>
-    <!--  导航栏  -->
-    <div id="nav">
-        <el-menu
-                :default-active="activeIndex"
-                class="el-menu-demo menu"
-                mode="horizontal"
-                background-color="rgba(0,0,0,0)"
-                text-color="#fff"
-                active-text-color="#eee"
-        >
-            <el-menu-item index="1">
-                <a href="./home.html#1"><i class="iconfont icon-home"></i>首页</a>
-            </el-menu-item>
-            <el-menu-item index="2">
-                <a href="./blog-label.html#2"><i class="iconfont icon-biaoqian"></i>标签</a>
-            </el-menu-item>
-            <el-menu-item index="3">
-                <a href="./blog-type.html#3"><i class="iconfont icon-baomuleixing"></i>分类</a>
-            </el-menu-item>
-            <el-menu-item index="4">
-                <a href="./leaveWord.html#4"><i class="iconfont icon-liuyan"></i>留言</a>
-            </el-menu-item>
-            <el-menu-item index="5">
-                <a href="./time-line.html#5"><i class="iconfont icon-shijianzhou"></i>时间轴</a>
-            </el-menu-item>
-            <el-menu-item index="6">
-                <a href="#" target="_blank"><i class="iconfont icon-tubiao302"></i>站长推荐</a>
-            </el-menu-item>
-            <el-menu-item index="7">
-                <a href="#"><i class="iconfont icon-guanyu"></i>关于</a>
-            </el-menu-item>
+        <!--  导航栏  -->
+        <div>
+            <el-menu
+                    :default-active="activeIndex"
+                    class="el-menu-demo menu"
+                    mode="horizontal"
+                    background-color="rgba(0,0,0,0)"
+                    text-color="#fff"
+                    active-text-color="#eee"
+            >
+                <el-menu-item index="1">
+                    <a href="./home.html#1"><i class="iconfont icon-home"></i>首页</a>
+                </el-menu-item>
+                <el-menu-item index="2">
+                    <a href="./blog-label.html#2"><i class="iconfont icon-biaoqian"></i>标签</a>
+                </el-menu-item>
+                <el-menu-item index="3">
+                    <a href="./blog-type.html#3"><i class="iconfont icon-baomuleixing"></i>分类</a>
+                </el-menu-item>
+                <el-menu-item index="4">
+                    <a href="./leaveWord.html#4"><i class="iconfont icon-liuyan"></i>留言</a>
+                </el-menu-item>
+                <el-menu-item index="5">
+                    <a href="./time-line.html#5"><i class="iconfont icon-shijianzhou"></i>时间轴</a>
+                </el-menu-item>
+                <el-menu-item index="6">
+                    <a href="#" target="_blank"><i class="iconfont icon-tubiao302"></i>站长推荐</a>
+                </el-menu-item>
+                <el-menu-item index="7">
+                    <a href="#"><i class="iconfont icon-guanyu"></i>关于</a>
+                </el-menu-item>
+                <el-button
+                        class="top-search"
+                        type="text"
+                        icon="el-icon-search"
+                        @click="centerDialogVisible = true">
+                    </el-button>
+            </el-menu>
+        </div>
+        <el-dialog
+                title="搜索页面"
+                :visible.sync="centerDialogVisible"
+                :before-close="handleClose">
             <el-input
                     placeholder="请输入搜索内容"
                     suffix-icon="iconfont icon-search"
                     v-model="search"
-                    class="search"
+                    class="dialog_search"
                     size="small"
                     @change="handelSearch"
             >
             </el-input>
-        </el-menu>
+            <el-button type="primary" size="small" class="search_btn" @click="getBlogs">搜索</el-button>
+            <div class='search-blog-content' v-for="(item,index) in blogInfos" :key="index">
+                <div>
+                    <div class='title'><span>{{item.title}}</span></div>
+                    <p class="txt">{{item.summary}}</p>
+                </div>
+                <div class='line'></div>
+                <div class="num">
+                    <span class='more'>
+                    <el-button type='primary' size='mini' @click="findBlogDetail(item.id)">查看更多</el-button>
+                </span>
+                </div>
+            </div>
+            <!--      分页      -->
+            <div class="page">
+                <el-pagination
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        background
+                        :current-page="pageInfo.currentPage"
+                        :page-sizes="[5,10,15,20,50]"
+                        :page-size="pageInfo.rows"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="totalSize">
+                </el-pagination>
+            </div>
+        </el-dialog>
     </div>
 </div>
+
