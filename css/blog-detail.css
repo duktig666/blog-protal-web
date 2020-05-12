@@ -183,5 +183,8 @@ ol {
 li {
     list-style: inherit;
 }
+#blog-content img {
+    max-width: 80rem;
+}
 
 

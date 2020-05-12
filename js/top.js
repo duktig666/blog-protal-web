@@ -36,13 +36,10 @@ $(document).ready(function () {
             },
             // 是否关闭搜索弹出框
             handleClose(done) {
-                this.$confirm('确认关闭？')
-                    .then(_ => {
+
                         this.search="",
                         this.blogInfos=[],
                         done();
-                    })
-                    .catch(_ => {});
             },
             getBlogs() {
                 $.ajax({
