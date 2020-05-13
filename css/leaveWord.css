@@ -42,7 +42,11 @@
 
 }
 .user-message span {
-    margin-left: 3rem;
+    margin-left: 5rem;
+}
+.user-message div {
+    display: block;
+    width: 20rem;
 }
 .user-photo {
     width: 3rem;

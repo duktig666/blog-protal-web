@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关于</title>
+    <link rel="stylesheet" href="../plugins/element/element-ui-index.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_4rlhr6iqdhe.css">
+    <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
+    <script src="../plugins/vue/vue-2.6.11.js"></script>
+    <script src="../plugins/element/element-ui-index.js"></script>
+    <script src="../js/common.js"></script>
+</head>
+<body>
+<!--头部-->
+<header id="header"></header>
+<script>
+    $('#header').load('./top.html?activeIndex=1');
+</script>
+<!--主体-->
+<div class="content">
+    <div
+            style="display: flex;
+            justify-content:center;
+            align-content:center;
+            font-size: 10rem;
+            color: #ffffff;
+            width: 120rem;
+            height: 35rem;">
+        待开发...</div>
+</div>
+<!--尾部-->
+<footer  id="footer"></footer>
+<script>
+    $('#footer').load('./foot.html');
+</script>
+</body>
+</html>

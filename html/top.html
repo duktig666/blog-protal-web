@@ -39,10 +39,10 @@
                     <a href="./time-line.html#5"><i class="iconfont icon-shijianzhou"></i>时间轴</a>
                 </el-menu-item>
                 <el-menu-item index="6">
-                    <a href="#" target="_blank"><i class="iconfont icon-tubiao302"></i>站长推荐</a>
+                    <a href="./recommend.html#6"><i class="iconfont icon-tubiao302"></i>站长推荐</a>
                 </el-menu-item>
                 <el-menu-item index="7">
-                    <a href="#"><i class="iconfont icon-guanyu"></i>关于</a>
+                    <a href="./about.html#7"><i class="iconfont icon-guanyu"></i>关于</a>
                 </el-menu-item>
                 <el-button
                         class="top-search"
@@ -58,11 +58,10 @@
                 :before-close="handleClose">
             <el-input
                     placeholder="请输入搜索内容"
-                    suffix-icon="iconfont icon-search"
                     v-model="search"
                     class="dialog_search"
                     size="small"
-                    @change="handelSearch"
+                    clearable
             >
             </el-input>
             <el-button type="primary" size="small" class="search_btn" @click="getBlogs">搜索</el-button>

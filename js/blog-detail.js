@@ -91,9 +91,10 @@ $(document).ready(function () {
                         blogDetail.clearObserveUser();
                     },
                     error: function (error) {   //请求失败后的回调方法
+                        console.log(error)
                         blogDetail.$message({
                             showClose: true,
-                            message: "新增评论失败：" + error.responseJSON.message,
+                            message: "新增评论失败：" + error.responseText.message,
                             type: 'error'
                         });
                     }
