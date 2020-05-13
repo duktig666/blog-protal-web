@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>博客详情</title>
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_4rlhr6iqdhe.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1795996_uxg836kbdxq.css">
     <link rel="stylesheet" href="../plugins/element/element-ui-index.css"/>
     <link rel="stylesheet" href="../css/common.css"/>
     <link rel="stylesheet" href="../css/top.css"/>
     <link rel="stylesheet" href="../css/blog-detail.css"/>
     <!--   引入mavonEditor的样式 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"
+          rel="stylesheet">
     <script src="../plugins/jquery/jquery-3.5.0.min.js"></script>
+    <script src="../plugins/jquery/jquery.cookie-1.4.1.min.js"></script>
     <script src="../plugins/vue/vue-2.6.11.js"></script>
     <script src="../plugins/element/element-ui-index.js"></script>
     <script src="../js/common.js"></script>
@@ -51,6 +53,12 @@
                     <i class="iconfont icon-shoucang visit-i"><span>{{blogInfos.blog.likeNumber}}</span></i>
                     <i class="iconfont icon-pinglun visit-i"><span>{{blogInfos.blog.observeNumber}}</span></i>
                 </div>
+            </div>
+            <!--      点赞和分享      -->
+            <div class="blog-detail-like-div">
+                <el-button class="blog-detail-like-btn" @click="increaseLikeCount">喜欢</el-button>
+                <i class="iconfont icon-zan1"></i>
+                <el-button class="blog-detail-like-btn">分享</el-button>
             </div>
             <!--      博客评论      -->
             <div id="blog-observe">

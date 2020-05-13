@@ -61,7 +61,7 @@ $(document).ready(function () {
                     }, "json").fail(function (error) {
                     blogDetail.$message({
                         showClose: true,
-                        message: "查询博客评论失败"+ error.responseJSON.message,
+                        message: "查询博客评论失败" + error.responseJSON.message,
                         type: 'error'
                     });
                 });
@@ -120,10 +120,63 @@ $(document).ready(function () {
                 this.headUrl = ''; //头像
                 this.observeContent = '';// 评论内容
             },
+            //进入博客详情页，博客的浏览量+1
+            increaseViewCount() {
+                if ($.cookie("viewId") !== this.blogId) {
+                    $.ajax({
+                        url: baseUrl + "/api/blog/increase-view-number/" + this.blogId,
+                        dataType: "text",
+                        type: "put",
+                        success: function (data, status, xhr) {
+                            //设置过期时间为1h
+                            let date = new Date();
+                            date.setTime(date.getTime() + 60 * 60 * 60 * 1000);
+                            $.cookie("viewId", blogDetail.blogId, {"path": "/",}, {expires: date});
+                        },
+                        error: function (error) {
+                            blogDetail.$message({
+                                showClose: true,
+                                message: error.responseJSON.message,
+                                type: 'error'
+                            });
+                        }
+                    });
+                }
+            },
+            //点击点赞，增加博客的点赞量
+            increaseLikeCount() {
+                if ($.cookie("likeId") !== this.blogId) {
+                    $.ajax({
+                        url: baseUrl + "/api/blog/increase-like-number/" + this.blogId,
+                        dataType: "text",
+                        type: "put",
+                        success: function (data, status, xhr) {
+                            //设置过期时间为1h
+                            let date = new Date();
+                            date.setTime(date.getTime() + 60 * 60 * 60 * 1000);
+                            $.cookie("likeId", blogDetail.blogId, {"path": "/",}, {expires: date});
+                        },
+                        error: function (error) {   //请求失败后的回调方法
+                            blogDetail.$message({
+                                showClose: true,
+                                message: error.responseJSON.message,
+                                type: 'error'
+                            });
+                        }
+                    });
+                }else{
+                    blogDetail.$message({
+                        showClose: true,
+                        message: "您已经点过赞啦！",
+                        type: 'success'
+                    });
+                }
+            },
         },
         mounted() {
             this.getBlogInfo();
             this.getBlogObserve();
+            this.increaseViewCount();
         },
         created() {
             this.blogId = window.location.search.substr(1);
