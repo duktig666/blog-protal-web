@@ -204,7 +204,7 @@ ol {
     list-style-type: decimal;
 }
 
-li {
+#blog-content li {
     list-style: inherit;
 }
 #blog-content img {
