@@ -1,5 +1,5 @@
 //项目后台请求基础路径
-const baseUrl = "http://127.0.0.1:8090";
+const baseUrl = "http://118.89.143.27:8090";
 
 //计算某时间距离现在的时差（天、时、分、秒）
 function timeLag(oldTime) {//di作为一个变量传进来
