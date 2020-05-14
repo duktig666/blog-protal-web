@@ -78,6 +78,7 @@
 .dialog_search {
     float: left;
     line-height: 3rem;
+    margin-left: 5rem;
 }
 .el-input {
     width: 70%;

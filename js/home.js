@@ -52,7 +52,6 @@ $(document).ready(function () {
                     success:function(data) {
                         blogList.items=data.items;
                         blogList.totalSize = data.total;
-                        console.log(blogList.items)
                     }
                 })
             },
